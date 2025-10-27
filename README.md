@@ -16,10 +16,12 @@ This project implements an ETL pipeline using Apache Airflow to transfer data fr
 ```
 
 ## Prerequisites
+- UV
 - Docker
 - Docker Compose
 
 ## Setup Instructions
+
 
 1. Clone the repository:
 ```bash
@@ -27,11 +29,12 @@ git clone <repository-url>
 cd <project-directory>
 ```
 
-2. Run the setup script:
-```bash
-chmod +x setup.sh
-./setup.sh
-```
+2. UV 
+- UV Sync
+- Activate the Virtual ENV 
+    * Linux --> source .venv/bin/activate.fish
+    * Windows via Powersheel --> .venv\Scripts\Activate.ps1
+
 
 3. Build and start the containers:
 ```bash
@@ -39,22 +42,34 @@ docker-compose build
 docker-compose up -d
 ```
 
-4. Initialize Airflow (first time only):
-```bash
-docker-compose run airflow-webserver airflow db init
-docker-compose run airflow-webserver airflow users create \
-    --username admin \
-    --firstname Admin \
-    --lastname User \
-    --role Admin \
-    --email admin@example.com \
-    --password admin
-```
-
-5. Access the services:
+4. Access the services:
 - Airflow UI: http://localhost:8080 (username: admin, password: admin)
 - MySQL: localhost:3306
 - PostgreSQL: localhost:5432
+
+5. Run Script to Setup the database
+```
+python dataset/mysql_dataset.py
+```
+6. Setting the connection
+- Open Admin -> Connection :
+- Click add 
+For MySQL:
+connection Id : airflow_con
+connection Type: MySQL
+host: mysql
+schema: airflow
+password: airflow
+port: 3306
+
+For PostGres:
+connection Id : postgres_con
+connection Type: Postgres
+host: postgres
+database: airflow
+login: airflow
+password: airflow
+port: 5432
 
 ## DAG Description
 The ETL pipeline (`mysql_to_postgres_etl`) runs hourly and:
