@@ -1,0 +1,69 @@
+[2025-10-27T14:34:26.316+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T14:34:26.334+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_postgres_connection.test_postgres_connection manual__2025-10-27T14:34:24.991482+00:00 [queued]>
+[2025-10-27T14:34:26.339+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_postgres_connection.test_postgres_connection manual__2025-10-27T14:34:24.991482+00:00 [queued]>
+[2025-10-27T14:34:26.339+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T14:34:26.349+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_postgres_connection> on 2025-10-27 14:34:24.991482+00:00
+[2025-10-27T14:34:26.355+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T14:34:26.356+0000] {standard_task_runner.py:64} INFO - Started process 76 to run task
+[2025-10-27T14:34:26.357+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'test_postgres_connection', 'test_postgres_connection', 'manual__2025-10-27T14:34:24.991482+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/test_postgres_connection.py', '--cfg-path', '/tmp/tmpjt23czyx']
+[2025-10-27T14:34:26.359+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask test_postgres_connection
+[2025-10-27T14:34:26.393+0000] {task_command.py:426} INFO - Running <TaskInstance: test_postgres_connection.test_postgres_connection manual__2025-10-27T14:34:24.991482+00:00 [running]> on host a0076f556b70
+[2025-10-27T14:34:26.459+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_postgres_connection' AIRFLOW_CTX_TASK_ID='test_postgres_connection' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T14:34:24.991482+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T14:34:24.991482+00:00'
+[2025-10-27T14:34:26.461+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T14:34:26.468+0000] {base.py:84} INFO - Using connection ID 'postgres_con' for task execution.
+[2025-10-27T14:34:26.471+0000] {logging_mixin.py:188} INFO - PostgreSQL Connection Test Successful!
+[2025-10-27T14:34:26.471+0000] {logging_mixin.py:188} INFO - PostgreSQL Version: PostgreSQL 13.22 (Debian 13.22-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+[2025-10-27T14:34:26.474+0000] {logging_mixin.py:188} INFO - 
+Available tables:
+[2025-10-27T14:34:26.475+0000] {logging_mixin.py:188} INFO - - job: 10 records
+[2025-10-27T14:34:26.476+0000] {logging_mixin.py:188} INFO - - slot_pool: 1 records
+[2025-10-27T14:34:26.476+0000] {logging_mixin.py:188} INFO - - log: 58 records
+[2025-10-27T14:34:26.477+0000] {logging_mixin.py:188} INFO - - dag_code: 48 records
+[2025-10-27T14:34:26.477+0000] {logging_mixin.py:188} INFO - - dag_pickle: 0 records
+[2025-10-27T14:34:26.478+0000] {logging_mixin.py:188} INFO - - ab_user: 1 records
+[2025-10-27T14:34:26.479+0000] {logging_mixin.py:188} INFO - - ab_register_user: 0 records
+[2025-10-27T14:34:26.479+0000] {logging_mixin.py:188} INFO - - connection: 2 records
+[2025-10-27T14:34:26.480+0000] {logging_mixin.py:188} INFO - - callback_request: 0 records
+[2025-10-27T14:34:26.480+0000] {logging_mixin.py:188} INFO - - import_error: 0 records
+[2025-10-27T14:34:26.481+0000] {logging_mixin.py:188} INFO - - sla_miss: 0 records
+[2025-10-27T14:34:26.482+0000] {logging_mixin.py:188} INFO - - variable: 0 records
+[2025-10-27T14:34:26.482+0000] {logging_mixin.py:188} INFO - - serialized_dag: 61 records
+[2025-10-27T14:34:26.483+0000] {logging_mixin.py:188} INFO - - dataset: 10 records
+[2025-10-27T14:34:26.483+0000] {logging_mixin.py:188} INFO - - dag_schedule_dataset_reference: 16 records
+[2025-10-27T14:34:26.484+0000] {logging_mixin.py:188} INFO - - dag: 63 records
+[2025-10-27T14:34:26.484+0000] {logging_mixin.py:188} INFO - - task_outlet_dataset_reference: 10 records
+[2025-10-27T14:34:26.485+0000] {logging_mixin.py:188} INFO - - dataset_dag_run_queue: 0 records
+[2025-10-27T14:34:26.486+0000] {logging_mixin.py:188} INFO - - log_template: 2 records
+[2025-10-27T14:34:26.486+0000] {logging_mixin.py:188} INFO - - dag_run: 3 records
+[2025-10-27T14:34:26.487+0000] {logging_mixin.py:188} INFO - - dag_tag: 65 records
+[2025-10-27T14:34:26.487+0000] {logging_mixin.py:188} INFO - - dag_owner_attributes: 0 records
+[2025-10-27T14:34:26.487+0000] {logging_mixin.py:188} INFO - - ab_permission: 5 records
+[2025-10-27T14:34:26.488+0000] {logging_mixin.py:188} INFO - - ab_permission_view: 275 records
+[2025-10-27T14:34:26.488+0000] {logging_mixin.py:188} INFO - - ab_view_menu: 114 records
+[2025-10-27T14:34:26.489+0000] {logging_mixin.py:188} INFO - - ab_user_role: 1 records
+[2025-10-27T14:34:26.489+0000] {logging_mixin.py:188} INFO - - ab_role: 5 records
+[2025-10-27T14:34:26.490+0000] {logging_mixin.py:188} INFO - - dag_warning: 0 records
+[2025-10-27T14:34:26.490+0000] {logging_mixin.py:188} INFO - - dagrun_dataset_event: 0 records
+[2025-10-27T14:34:26.491+0000] {logging_mixin.py:188} INFO - - dataset_event: 0 records
+[2025-10-27T14:34:26.491+0000] {logging_mixin.py:188} INFO - - trigger: 0 records
+[2025-10-27T14:34:26.492+0000] {logging_mixin.py:188} INFO - - task_instance: 3 records
+[2025-10-27T14:34:26.492+0000] {logging_mixin.py:188} INFO - - dag_run_note: 0 records
+[2025-10-27T14:34:26.493+0000] {logging_mixin.py:188} INFO - - ab_permission_view_role: 224 records
+[2025-10-27T14:34:26.493+0000] {logging_mixin.py:188} INFO - - task_fail: 1 records
+[2025-10-27T14:34:26.494+0000] {logging_mixin.py:188} INFO - - task_map: 0 records
+[2025-10-27T14:34:26.495+0000] {logging_mixin.py:188} INFO - - task_reschedule: 0 records
+[2025-10-27T14:34:26.495+0000] {logging_mixin.py:188} INFO - - xcom: 0 records
+[2025-10-27T14:34:26.496+0000] {logging_mixin.py:188} INFO - - task_instance_note: 0 records
+[2025-10-27T14:34:26.496+0000] {logging_mixin.py:188} INFO - - rendered_task_instance_fields: 3 records
+[2025-10-27T14:34:26.497+0000] {logging_mixin.py:188} INFO - - session: 2 records
+[2025-10-27T14:34:26.497+0000] {logging_mixin.py:188} INFO - - alembic_version: 1 records
+[2025-10-27T14:34:26.497+0000] {logging_mixin.py:188} INFO - - celery_taskmeta: 4 records
+[2025-10-27T14:34:26.498+0000] {logging_mixin.py:188} INFO - - celery_tasksetmeta: 0 records
+[2025-10-27T14:34:26.498+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-10-27T14:34:26.499+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T14:34:26.507+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=test_postgres_connection, task_id=test_postgres_connection, run_id=manual__2025-10-27T14:34:24.991482+00:00, execution_date=20251027T143424, start_date=20251027T143426, end_date=20251027T143426
+[2025-10-27T14:34:26.536+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T14:34:26.554+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T14:34:26.555+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

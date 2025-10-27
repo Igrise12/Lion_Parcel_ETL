@@ -1,0 +1,12 @@
+google-api-python-client 
+apache-airflow-providers-amazon 
+apache-airflow-providers-mysql 
+apache-airflow-providers-google 
+apache-airflow-providers-sqlite 
+apache-airflow-providers-mongo
+apache-airflow-providers-postgres
+xmltodict 
+pandas 
+numpy 
+praw
+pymongo

@@ -1,0 +1,44 @@
+[2025-10-27T16:00:03.983+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T16:00:04.001+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.extract_from_mysql scheduled__2025-10-27T15:00:00+00:00 [queued]>
+[2025-10-27T16:00:04.006+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.extract_from_mysql scheduled__2025-10-27T15:00:00+00:00 [queued]>
+[2025-10-27T16:00:04.007+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T16:00:04.017+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_from_mysql> on 2025-10-27 15:00:00+00:00
+[2025-10-27T16:00:04.022+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=1012) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T16:00:04.023+0000] {standard_task_runner.py:64} INFO - Started process 1014 to run task
+[2025-10-27T16:00:04.024+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'mysql_to_postgres_etl', 'extract_from_mysql', 'scheduled__2025-10-27T15:00:00+00:00', '--job-id', '82', '--raw', '--subdir', 'DAGS_FOLDER/mysql_to_postgres_etl.py', '--cfg-path', '/tmp/tmp7ta7741x']
+[2025-10-27T16:00:04.025+0000] {standard_task_runner.py:91} INFO - Job 82: Subtask extract_from_mysql
+[2025-10-27T16:00:04.062+0000] {task_command.py:426} INFO - Running <TaskInstance: mysql_to_postgres_etl.extract_from_mysql scheduled__2025-10-27T15:00:00+00:00 [running]> on host a0076f556b70
+[2025-10-27T16:00:04.135+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_to_postgres_etl' AIRFLOW_CTX_TASK_ID='extract_from_mysql' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-27T15:00:00+00:00'
+[2025-10-27T16:00:04.136+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T16:00:04.137+0000] {mysql_to_postgres_etl.py:90} INFO - Extracting data for time window: 2025-10-27 14:00:00+00:00 to 2025-10-27 15:00:00+00:00
+[2025-10-27T16:00:04.144+0000] {base.py:84} INFO - Using connection ID '***_con' for task execution.
+[2025-10-27T16:00:04.156+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py:269: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  return psql.read_sql(sql, con=conn, params=parameters, **kwargs)
+
+[2025-10-27T16:00:04.184+0000] {mysql_to_postgres_etl.py:120} INFO - Extracted 64 rows from MySQL for window: 2025-10-27 14:00:00+00:00 to 2025-10-27 15:00:00+00:00
+[2025-10-27T16:00:04.185+0000] {mysql_to_postgres_etl.py:126} INFO - Status distribution in extracted data:
+[2025-10-27T16:00:04.186+0000] {mysql_to_postgres_etl.py:128} INFO - - delivered: 20 records
+[2025-10-27T16:00:04.187+0000] {mysql_to_postgres_etl.py:128} INFO - - done: 17 records
+[2025-10-27T16:00:04.187+0000] {mysql_to_postgres_etl.py:128} INFO - - created: 15 records
+[2025-10-27T16:00:04.187+0000] {mysql_to_postgres_etl.py:128} INFO - - in_transit: 12 records
+[2025-10-27T16:00:04.211+0000] {python.py:237} INFO - Done. Returned value was:     receipt_id  customer_id  ...          updated_at          deleted_at
+0         1843         1566  ... 2025-10-27 14:01:04                 NaT
+1        43763         2188  ... 2025-10-27 14:01:35                 NaT
+2          479         3230  ... 2025-10-27 14:03:37                 NaT
+3        62126         3280  ... 2025-10-27 14:03:51 2025-10-27 14:03:51
+4        58940         4702  ... 2025-10-27 14:04:05                 NaT
+..         ...          ...  ...                 ...                 ...
+59       82230         4293  ... 2025-10-27 14:54:59                 NaT
+60       96070         2352  ... 2025-10-27 14:55:30                 NaT
+61       10101         2461  ... 2025-10-27 14:55:48 2025-10-27 14:55:48
+62       25642         3437  ... 2025-10-27 14:56:01                 NaT
+63        7046         4560  ... 2025-10-27 14:59:16                 NaT
+
+[64 rows x 8 columns]
+[2025-10-27T16:00:04.231+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T16:00:04.250+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=mysql_to_postgres_etl, task_id=extract_from_mysql, run_id=scheduled__2025-10-27T15:00:00+00:00, execution_date=20251027T150000, start_date=20251027T160004, end_date=20251027T160004
+[2025-10-27T16:00:04.286+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T16:00:04.308+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T16:00:04.309+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

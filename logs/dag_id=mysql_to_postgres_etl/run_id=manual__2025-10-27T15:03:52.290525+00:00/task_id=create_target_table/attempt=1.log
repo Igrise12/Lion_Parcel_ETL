@@ -1,0 +1,41 @@
+[2025-10-27T15:03:55.646+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T15:03:55.666+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.create_target_table manual__2025-10-27T15:03:52.290525+00:00 [queued]>
+[2025-10-27T15:03:55.672+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.create_target_table manual__2025-10-27T15:03:52.290525+00:00 [queued]>
+[2025-10-27T15:03:55.672+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T15:03:55.686+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): create_target_table> on 2025-10-27 15:03:52.290525+00:00
+[2025-10-27T15:03:55.693+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=710) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T15:03:55.695+0000] {standard_task_runner.py:64} INFO - Started process 712 to run task
+[2025-10-27T15:03:55.695+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'mysql_to_postgres_etl', 'create_target_table', 'manual__2025-10-27T15:03:52.290525+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/mysql_to_postgres_etl.py', '--cfg-path', '/tmp/tmp1xcuj003']
+[2025-10-27T15:03:55.696+0000] {standard_task_runner.py:91} INFO - Job 40: Subtask create_target_table
+[2025-10-27T15:03:55.729+0000] {task_command.py:426} INFO - Running <TaskInstance: mysql_to_postgres_etl.create_target_table manual__2025-10-27T15:03:52.290525+00:00 [running]> on host a0076f556b70
+[2025-10-27T15:03:55.794+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_to_postgres_etl' AIRFLOW_CTX_TASK_ID='create_target_table' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T15:03:52.290525+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T15:03:52.290525+00:00'
+[2025-10-27T15:03:55.795+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T15:03:55.802+0000] {base.py:84} INFO - Using connection ID 'postgres_con' for task execution.
+[2025-10-27T15:03:55.806+0000] {sql.py:495} INFO - Running statement: 
+    CREATE TABLE IF NOT EXISTS shipping_fact (
+        id SERIAL PRIMARY KEY,
+        receipt_id INTEGER,
+        customer_id INTEGER,
+        last_status VARCHAR(20),
+        pos_origin VARCHAR(100),
+        pos_destination VARCHAR(100),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP,
+        deleted_at TIMESTAMP,
+        etl_updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    
+    -- Create index for better query performance
+    CREATE INDEX IF NOT EXISTS idx_shipping_receipt_id ON shipping_fact(receipt_id);
+    CREATE INDEX IF NOT EXISTS idx_shipping_customer_id ON shipping_fact(customer_id);
+    CREATE INDEX IF NOT EXISTS idx_shipping_status ON shipping_fact(last_status);
+    , parameters: None
+[2025-10-27T15:03:55.808+0000] {mysql_to_postgres_etl.py:61} INFO - Target table created/verified successfully!
+[2025-10-27T15:03:55.808+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-10-27T15:03:55.809+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T15:03:55.817+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=mysql_to_postgres_etl, task_id=create_target_table, run_id=manual__2025-10-27T15:03:52.290525+00:00, execution_date=20251027T150352, start_date=20251027T150355, end_date=20251027T150355
+[2025-10-27T15:03:55.835+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T15:03:55.858+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T15:03:55.860+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

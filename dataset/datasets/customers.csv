@@ -1,0 +1,11 @@
+customer_id,customer_name,customer_email,customer_phone,created_at,updated_at
+1,Opung Saefullah,ivanmandala@example.net,+62 (081) 960-0133,2025-08-03 14:25:51.906326,2025-08-06 14:25:51.906326
+2,Kanda Napitupulu,cprasetya@example.net,+62 (0026) 542 3511,2025-07-14 05:00:59.197293,2025-07-14 05:00:59.197293
+3,Zulfa Situmorang,bakianto78@example.org,(018) 495 9310,2025-06-25 03:09:14.825688,2025-07-03 03:09:14.825688
+4,"T. Bahuwirya Pradipta, S.IP",dsetiawan@example.net,+62 (255) 341-9283,2025-08-06 22:08:35.225158,2025-08-13 22:08:35.225158
+5,Humaira Uyainah,yessisimbolon@example.org,+62-0056-413-9537,2025-05-23 04:45:07.067623,2025-05-30 04:45:07.067623
+6,"Jagapati Megantara, S.T.",jumadipurwanti@example.net,+62 (0969) 653 2871,2025-06-27 12:28:55.889875,2025-07-01 12:28:55.889875
+7,"Puti Eva Utami, S.E.",eriyanti@example.com,(097) 848 0184,2025-08-21 07:10:28.876300,2025-08-24 07:10:28.876300
+8,Carla Sihombing,dmanullang@example.org,+62 (0828) 148 9325,2025-08-23 05:57:37.129294,2025-08-25 05:57:37.129294
+9,KH. Virman Nuraini,rahimahmarsudi@example.com,+62-15-430-3911,2025-08-22 07:44:12.928540,2025-09-04 07:44:12.928540
+10,"Puti Vanya Nasyidah, S.E.I",titinkusmawati@example.net,+62 (48) 963-8346,2025-08-17 16:01:22.743195,2025-08-18 16:01:22.743195

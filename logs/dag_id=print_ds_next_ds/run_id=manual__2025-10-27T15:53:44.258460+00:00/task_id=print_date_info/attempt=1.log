@@ -1,0 +1,39 @@
+[2025-10-27T15:53:45.323+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T15:53:45.342+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: print_ds_next_ds.print_date_info manual__2025-10-27T15:53:44.258460+00:00 [queued]>
+[2025-10-27T15:53:45.347+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: print_ds_next_ds.print_date_info manual__2025-10-27T15:53:44.258460+00:00 [queued]>
+[2025-10-27T15:53:45.347+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T15:53:45.357+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): print_date_info> on 2025-10-27 15:53:44.258460+00:00
+[2025-10-27T15:53:45.363+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=915) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T15:53:45.364+0000] {standard_task_runner.py:64} INFO - Started process 917 to run task
+[2025-10-27T15:53:45.365+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'print_ds_next_ds', 'print_date_info', 'manual__2025-10-27T15:53:44.258460+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/tes.py', '--cfg-path', '/tmp/tmpatihz2ry']
+[2025-10-27T15:53:45.367+0000] {standard_task_runner.py:91} INFO - Job 78: Subtask print_date_info
+[2025-10-27T15:53:45.402+0000] {task_command.py:426} INFO - Running <TaskInstance: print_ds_next_ds.print_date_info manual__2025-10-27T15:53:44.258460+00:00 [running]> on host a0076f556b70
+[2025-10-27T15:53:45.448+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/context.py:212: AirflowContextDeprecationWarning: Accessing 'next_ds' from the template is deprecated and will be removed in a future version. Please use '{{ data_interval_end | ds }}' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2025-10-27T15:53:45.448+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/context.py:212: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2025-10-27T15:53:45.449+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/context.py:212: AirflowContextDeprecationWarning: Accessing 'next_execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_end' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2025-10-27T15:53:45.476+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='print_ds_next_ds' AIRFLOW_CTX_TASK_ID='print_date_info' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T15:53:44.258460+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T15:53:44.258460+00:00'
+[2025-10-27T15:53:45.478+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T15:53:45.478+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-10-27T15:53:45.479+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            echo "Date Information:"\n            echo "DS (execution date)     : 2025-10-27"\n            echo "Next DS (next run date) : 2025-10-27"\n            echo "Timestamp              : 2025-10-27T15:53:44.258460+00:00"\n            echo "Execution Date Time    : 2025-10-27 15:53:44.258460+00:00"\n            echo "Next Execution Time    : 2025-10-27 15:53:44.258460+00:00"\n            echo "Hour                   : 15"\n        ']
+[2025-10-27T15:53:45.491+0000] {subprocess.py:86} INFO - Output:
+[2025-10-27T15:53:45.493+0000] {subprocess.py:93} INFO - Date Information:
+[2025-10-27T15:53:45.493+0000] {subprocess.py:93} INFO - DS (execution date)     : 2025-10-27
+[2025-10-27T15:53:45.494+0000] {subprocess.py:93} INFO - Next DS (next run date) : 2025-10-27
+[2025-10-27T15:53:45.494+0000] {subprocess.py:93} INFO - Timestamp              : 2025-10-27T15:53:44.258460+00:00
+[2025-10-27T15:53:45.494+0000] {subprocess.py:93} INFO - Execution Date Time    : 2025-10-27 15:53:44.258460+00:00
+[2025-10-27T15:53:45.494+0000] {subprocess.py:93} INFO - Next Execution Time    : 2025-10-27 15:53:44.258460+00:00
+[2025-10-27T15:53:45.495+0000] {subprocess.py:93} INFO - Hour                   : 15
+[2025-10-27T15:53:45.495+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-10-27T15:53:45.496+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T15:53:45.516+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=print_ds_next_ds, task_id=print_date_info, run_id=manual__2025-10-27T15:53:44.258460+00:00, execution_date=20251027T155344, start_date=20251027T155345, end_date=20251027T155345
+[2025-10-27T15:53:45.545+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T15:53:45.558+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T15:53:45.560+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

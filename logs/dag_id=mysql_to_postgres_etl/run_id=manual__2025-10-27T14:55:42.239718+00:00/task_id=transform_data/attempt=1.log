@@ -1,0 +1,34 @@
+[2025-10-27T15:00:52.599+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T15:00:52.617+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.transform_data manual__2025-10-27T14:55:42.239718+00:00 [queued]>
+[2025-10-27T15:00:52.623+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.transform_data manual__2025-10-27T14:55:42.239718+00:00 [queued]>
+[2025-10-27T15:00:52.624+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T15:00:52.633+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data> on 2025-10-27 14:55:42.239718+00:00
+[2025-10-27T15:00:52.638+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=545) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T15:00:52.639+0000] {standard_task_runner.py:64} INFO - Started process 547 to run task
+[2025-10-27T15:00:52.640+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'mysql_to_postgres_etl', 'transform_data', 'manual__2025-10-27T14:55:42.239718+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/mysql_to_postgres_etl.py', '--cfg-path', '/tmp/tmpu62l12t7']
+[2025-10-27T15:00:52.641+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask transform_data
+[2025-10-27T15:00:52.677+0000] {task_command.py:426} INFO - Running <TaskInstance: mysql_to_postgres_etl.transform_data manual__2025-10-27T14:55:42.239718+00:00 [running]> on host a0076f556b70
+[2025-10-27T15:00:52.739+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_to_postgres_etl' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T14:55:42.239718+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-27T14:55:42.239718+00:00'
+[2025-10-27T15:00:52.740+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T15:00:52.896+0000] {mysql_to_postgres_etl.py:111} INFO - Transformed data: 100000 rows ready for loading
+[2025-10-27T15:00:53.698+0000] {python.py:237} INFO - Done. Returned value was:        receipt_id  customer_id  ...          deleted_at             etl_updated_at
+86295       38908         4362  ...                 NaT 2025-10-27 15:00:52.896390
+59150       20530         2716  ...                 NaT 2025-10-27 15:00:52.896390
+38831       78906         4284  ...                 NaT 2025-10-27 15:00:52.896390
+76730       98325         2236  ...                 NaT 2025-10-27 15:00:52.896390
+46545       57976         2358  ...                 NaT 2025-10-27 15:00:52.896390
+...           ...          ...  ...                 ...                        ...
+64285       25267         3556  ...                 NaT 2025-10-27 15:00:52.896390
+55734       72729         4833  ...                 NaT 2025-10-27 15:00:52.896390
+32116        5867         1554  ...                 NaT 2025-10-27 15:00:52.896390
+55607       61480         4665  ... 2025-11-29 19:06:22 2025-10-27 15:00:52.896390
+72347       47452          694  ...                 NaT 2025-10-27 15:00:52.896390
+
+[100000 rows x 9 columns]
+[2025-10-27T15:00:53.718+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T15:00:54.186+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=mysql_to_postgres_etl, task_id=transform_data, run_id=manual__2025-10-27T14:55:42.239718+00:00, execution_date=20251027T145542, start_date=20251027T150052, end_date=20251027T150054
+[2025-10-27T15:00:54.230+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T15:00:54.252+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T15:00:54.254+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

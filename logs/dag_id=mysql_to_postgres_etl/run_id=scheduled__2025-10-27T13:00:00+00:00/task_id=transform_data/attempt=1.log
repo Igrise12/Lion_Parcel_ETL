@@ -1,0 +1,34 @@
+[2025-10-27T15:00:27.982+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-27T15:00:28.004+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.transform_data scheduled__2025-10-27T13:00:00+00:00 [queued]>
+[2025-10-27T15:00:28.011+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_to_postgres_etl.transform_data scheduled__2025-10-27T13:00:00+00:00 [queued]>
+[2025-10-27T15:00:28.011+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-10-27T15:00:28.022+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data> on 2025-10-27 13:00:00+00:00
+[2025-10-27T15:00:28.028+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=493) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-27T15:00:28.029+0000] {standard_task_runner.py:64} INFO - Started process 495 to run task
+[2025-10-27T15:00:28.030+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'mysql_to_postgres_etl', 'transform_data', 'scheduled__2025-10-27T13:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/mysql_to_postgres_etl.py', '--cfg-path', '/tmp/tmpki43o4_w']
+[2025-10-27T15:00:28.031+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask transform_data
+[2025-10-27T15:00:28.067+0000] {task_command.py:426} INFO - Running <TaskInstance: mysql_to_postgres_etl.transform_data scheduled__2025-10-27T13:00:00+00:00 [running]> on host a0076f556b70
+[2025-10-27T15:00:28.140+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_to_postgres_etl' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-10-27T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-27T13:00:00+00:00'
+[2025-10-27T15:00:28.141+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-27T15:00:28.288+0000] {mysql_to_postgres_etl.py:111} INFO - Transformed data: 100000 rows ready for loading
+[2025-10-27T15:00:28.702+0000] {python.py:237} INFO - Done. Returned value was:        receipt_id  customer_id  ...          deleted_at             etl_updated_at
+86295       38908         4362  ...                 NaT 2025-10-27 15:00:28.287796
+59150       20530         2716  ...                 NaT 2025-10-27 15:00:28.287796
+38831       78906         4284  ...                 NaT 2025-10-27 15:00:28.287796
+76730       98325         2236  ...                 NaT 2025-10-27 15:00:28.287796
+46545       57976         2358  ...                 NaT 2025-10-27 15:00:28.287796
+...           ...          ...  ...                 ...                        ...
+64285       25267         3556  ...                 NaT 2025-10-27 15:00:28.287796
+55734       72729         4833  ...                 NaT 2025-10-27 15:00:28.287796
+32116        5867         1554  ...                 NaT 2025-10-27 15:00:28.287796
+55607       61480         4665  ... 2025-11-29 19:06:22 2025-10-27 15:00:28.287796
+72347       47452          694  ...                 NaT 2025-10-27 15:00:28.287796
+
+[100000 rows x 9 columns]
+[2025-10-27T15:00:28.723+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-27T15:00:29.152+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=mysql_to_postgres_etl, task_id=transform_data, run_id=scheduled__2025-10-27T13:00:00+00:00, execution_date=20251027T130000, start_date=20251027T150028, end_date=20251027T150029
+[2025-10-27T15:00:29.193+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-10-27T15:00:29.219+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-10-27T15:00:29.221+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
